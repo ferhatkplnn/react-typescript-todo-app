@@ -1,0 +1,10 @@
+$todo-list-color: #ff304f;
+
+.todo-list {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 44.5%;
+  padding: 16px;
+  background-color: $todo-list-color;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoInput from "./components/TodoInput";
 import { Todo } from "./model";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todo, setTodo] = useState<string>("");
@@ -16,6 +17,7 @@ const App = () => {
     <div className="App">
       <div className="heading">Todo App</div>
       <TodoInput todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
