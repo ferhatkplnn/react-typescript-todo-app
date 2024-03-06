@@ -1,14 +1,25 @@
+import React, { ChangeEvent } from "react";
 import "./styles/todoInput.scss";
 
-type TodoInputProps = {
+interface TodoInputProps {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
-};
+}
 
-const TodoInput = ({ todo, setTodo }: TodoInputProps) => {
+const TodoInput: React.FC<TodoInputProps> = ({ todo, setTodo }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setTodo(e.target.value);
+  };
+
   return (
     <form className="todo-form">
-      <input placeholder="Enter a task" className="input" />
+      <input
+        type="text"
+        placeholder="Enter a task"
+        className="input"
+        value={todo}
+        onChange={handleChange}
+      />
       <button type="submit" className="add-todo">
         Add
       </button>
