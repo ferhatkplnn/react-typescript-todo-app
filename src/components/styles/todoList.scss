@@ -1,10 +1,28 @@
-$todo-list-color: #ff304f;
+$active-todo-list-color: #ff304f;
+$completed-todo-list-color: #28c7fa;
 
-.todo-list {
-  border-radius: 4px;
+.container {
+  width: 95%;
   display: flex;
-  flex-direction: column;
-  width: 44.5%;
-  padding: 16px;
-  background-color: $todo-list-color;
+  margin-top: 8px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  & > .todo-list {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 44.5%;
+    padding: 16px;
+    background-color: $active-todo-list-color;
+
+    & > .title {
+      font-size: 30px;
+      color: white;
+    }
+  }
+
+  & > .todo-list.remove {
+    background-color: $completed-todo-list-color;
+  }
 }
